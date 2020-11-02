@@ -17,7 +17,7 @@ module.exports = {
         else {
             sequence = await FibonacciSequence.create({
                 size: size,
-                multiplicationTable: FibonacciSequence.generate(size)
+                multiplicationTable: FibonacciGenerator.generate(size)
             });
         }
         
