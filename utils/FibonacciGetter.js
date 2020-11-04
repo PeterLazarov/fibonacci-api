@@ -6,7 +6,7 @@ module.exports = {
     async get(size) {
         let sequenceResult = await FibonacciSequence.findAll({
             where: {
-                size: registerData.size
+                size: size
             }
         })
 
@@ -15,10 +15,10 @@ module.exports = {
             sequence = sequenceResult[0];
         }
         else {
-            sequence = await FibonacciSequence.create({
+            sequence = {
                 size: size,
                 multiplicationTable: FibonacciGenerator.generate(size)
-            });
+            };
         }
         
         return sequence;
